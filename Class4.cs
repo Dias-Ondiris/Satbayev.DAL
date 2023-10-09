@@ -13,26 +13,39 @@ namespace Satbayev.DAL
         public RepositoryClient(string Path) { 
             this.Path = Path;
         }
-        public void CreateClient(client client)
+        public bool CreateClient(Client client)
         {
-            using (var db = new LiteDatabase(Path))
+            try { 
+                using (var db = new LiteDatabase(Path))
+                {
+                    var clients = db.GetCollection<Client>("Client");
+                    clients.Insert(client);
+                }
+            }
+            catch(Exception) 
+            { 
+                return false;
+            }
+            return true;
+        }
+        public Client GetClient(string Email, string Password)
+        {
+            try
             {
-                var clients = db.GetCollection<client>("Client");
-                clients.Insert(client);
+                using (var db = new LiteDatabase(Path))
+                {
+                    return db.GetCollection<Client>("Client").FindAll().First(f => f.Email == Email & f.Password == Password);
+                }
+            }
+            catch (Exception) { 
+                return null;
             }
         }
-        public client GetClient(string Email, string Password)
+        public Client GetClient(int clientid)
         {
             using (var db = new LiteDatabase(Path))
             {
-                return db.GetCollection<client>("Client").FindAll().First(f => f.Email == Email & f.Password == Password);
-            }
-        }
-        public client GetClient(int clientid)
-        {
-            using (var db = new LiteDatabase(Path))
-            {
-                return db.GetCollection<client>("Client").FindAll().First(f => f.Id == clientid);
+                return db.GetCollection<Client>("Client").FindAll().First(f => f.Id == clientid);
             }
         }
     }

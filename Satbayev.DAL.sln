@@ -5,6 +5,13 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satbayev.DAL", "Satbayev.DAL.csproj", "{FEE13F16-84B0-4766-8314-9166109DDFEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satbayev.BLL", "..\Satbayev.BEL\Satbayev.BLL.csproj", "{D71F3BCD-2520-4650-84C6-07510900B8BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEE13F16-84B0-4766-8314-9166109DDFEB} = {FEE13F16-84B0-4766-8314-9166109DDFEB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satbayev.ConsoleApp", "..\Satbayev.ConsoleApp\Satbayev.ConsoleApp.csproj", "{DF3EE71E-37CB-456D-A529-9D13FE7B7ECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,14 @@ Global
 		{FEE13F16-84B0-4766-8314-9166109DDFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEE13F16-84B0-4766-8314-9166109DDFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEE13F16-84B0-4766-8314-9166109DDFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71F3BCD-2520-4650-84C6-07510900B8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71F3BCD-2520-4650-84C6-07510900B8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71F3BCD-2520-4650-84C6-07510900B8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71F3BCD-2520-4650-84C6-07510900B8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3EE71E-37CB-456D-A529-9D13FE7B7ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3EE71E-37CB-456D-A529-9D13FE7B7ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3EE71E-37CB-456D-A529-9D13FE7B7ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3EE71E-37CB-456D-A529-9D13FE7B7ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

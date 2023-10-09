@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Satbayev.DAL
 {
-    public class client
+    public class Client
     {
         public int Id { get; set; }
         public DateTime CreateDate { get; set; }
